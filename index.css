@@ -225,7 +225,31 @@ p{
 
 /* specificity */
 
-.nav-btn{
-    cursor: pointer;
+.main-container{
+    background-image: url(/assets/main-background.png) no-repeat center ;
 }
 
+.nav-btn{
+    cursor: pointer;
+    border: 1px solid rgb(111, 57, 182, 0.5);
+    padding: 5px 3px 5px 3px;
+}
+
+.nav-btn:hover{
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+    transform: scale(1.04);
+}
+
+.footer-container{
+    /* background-color: rgba(43, 16, 78, 0.8);
+    color: whitesmoke;
+    padding: 20px; */
+    color: whitesmoke;
+    background-image: url(/assets/header-background-img.jpg);
+}
+
+.fa-brands:hover{
+    color: rgb(88, 216, 216);
+}
