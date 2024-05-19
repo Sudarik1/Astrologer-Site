@@ -18,14 +18,14 @@
 
         <header>
 
-            <div class="header-container ">
-                <div class="logo-header ">
+            <div class="header-container">
+                <div class="logo-header">
                     <img class="logo-img" src="/assets/logo.png"/>
                     <h1 class="increase-contrast" >Гуманистическая <br> астрология</h1>
                 </div>
 
                 <div class="application-form increase-contrast" >
-                    <form class="form-container"> 
+                    <form class="form-container" id="application-form"> 
                         <div class="form-input-container">
                             <!-- <h4 class="form-header">Подать заявку</h4> -->
                             <div>
@@ -286,15 +286,15 @@
 
                 <!-- notes page -->
                 <div class="toggle-display-none" id="content-notes">
-                    <!-- <h2>Заметки</h2> -->
+                    <h2>Заметки</h2>
                     <div id="notes-list">
                         <!-- Note items will be dynamically added here -->
                       </div>
                       
-                      <div id="fullNoteContainer"></div> <!-- Container for full note content -->
+                      <div class="full-note-container" id="full-note-container"></div> <!-- Container for full note content -->
 
                       <div id="back-to-all-notes">
-                        <button class="hidden" id="back-to-all-notes-btn">Вернуться ко всем заметкам</button>
+                        <button class="back-to-all-notes-btn hidden" id="back-to-all-notes-btn">Вернуться ко всем заметкам</button>
                       </div>
 
                 </div>
@@ -325,7 +325,7 @@
                     </p>
 
                     <div class="astroleger-page-photo-container-parent">
-                        <div class="astroleger-page-photo-container-child">
+                        <div class="astroleger-page-photo-container-child diplom-photo">
                             <img class="astrologer-page-photo" src="/assets/astrologer-dimploma-photo-second.png" />
                         </div>
 
@@ -333,7 +333,7 @@
                             <img class="astrologer-page-photo" src="/assets/astrologer-photo-first.jpg" />
                         </div>
                             
-                        <div class="astroleger-page-photo-container-child">
+                        <div class="astroleger-page-photo-container-child diplom-photo">
                             <img class="astrologer-page-photo" src="./assets/astrologer-dimploma-photo-first.jpg"/>
                         </div>
                             
@@ -341,7 +341,7 @@
                             <img class="astrologer-page-photo" src="./assets/astrologer-photo-second.jpg"/>
                         </div>
 
-                        <div class="astroleger-page-photo-container-child">
+                        <div class="astroleger-page-photo-container-child diplom-photo">
                             <img class="astrologer-page-photo" src="./assets/astrologer-certificate.png"/>
                         </div>
 

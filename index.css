@@ -11,6 +11,10 @@
     text-shadow: 1px 1px 4px black;
 }
 
+.notes-font-weight{
+    font-weight: normal;
+}
+
 /* set up */
 
 body{
@@ -25,13 +29,18 @@ h1{
 }
 
 h2{
-    font-size: 1.9em;
+    font-size: 1.75em;
     margin: 0px;
 }
 
 h4{
     font-size: 1.75em;
     margin: 0px;
+}
+
+p{
+    font-size: 1.1em;
+    margin: 15px 0 0 0;
 }
 
 label{
@@ -44,10 +53,6 @@ input{
 
 button{
     font-size: 0.9em;
-}
-
-p{
-    font-size: 1.1em;
 }
 
 /* layout */
@@ -84,18 +89,18 @@ p{
 }
 
 .application-form{
-    padding: 0 5% 0 10%;
-    
     font-size: 0.9em;
 
+    padding: 0 5% 0 10%;
 }
 
 .form-container{
     display: flex;
-    max-width: 250px;
     justify-content: center;
     align-items: center;
     gap: 20px;
+
+    max-width: 250px;
 }
 
 .form-input-container{
@@ -110,9 +115,11 @@ p{
 }
 
 .form-btn{
-    margin-left: 50px;
     font-size: 1.15em;
+
+    margin-left: 50px;
     padding: 5px;
+    
     border-radius: 15%;
 }
 
@@ -129,16 +136,14 @@ p{
 }
 
 .nav-btn{
-    padding: 5px 0 5px 0;
     margin: 2px 0 2px 0;
-    
+    padding: 5px 0 5px 0;
 }
 
 .link-container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
 }
 
 .content-container{
@@ -164,6 +169,7 @@ p{
 
 .astrologer-page-photo{
     display: block;
+    
     width: 100%;
 }
 
@@ -188,6 +194,7 @@ p{
 .footer-contact-container{
     text-align: left;
     align-self: stretch;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -196,20 +203,114 @@ p{
 .footer-icon-description-container{
     text-align: left;
     align-self: stretch;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-
-
 .fa-brands{
     font-size: 50px;
+    
     cursor: pointer;
 }
 
+/* specificity */
+
+.form-btn{
+    border: none;
+
+    cursor: pointer; 
+}
+
+.form-btn:hover{
+    background-color: rgb(114, 188, 218);
+
+    transform: scale(111.15);
+    transition: transform 110.5s ease;
+}
+
+.main-container{
+    background-image: url(/assets/main-background.png) no-repeat center ;
+}
+
+.nav-btn{
+    padding: 5px 3px 5px 3px;
+    border: 1px solid rgb(111, 57, 182, 0.5);
+    
+    background-color:rgb(246, 241, 250);
+    
+    cursor: pointer;
+}
+
+.nav-btn:hover{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.full-note-container{
+    margin-top: 15px;
+}
+
+.note-title{
+    cursor: pointer;
+}
+
+.note-link-style{
+    font-size: 0.75em;
+    text-decoration: underline rgb(111, 57, 182, 0.5);
+
+    margin: 3px;
+    padding: 5px 3px 5px 3px;
+    /* border: 1px solid rgb(111, 57, 182, 0.5); */
+    
+    /* background-color:rgb(246, 241, 250); */
+
+    cursor: pointer;
+}
+
+.note-link-style:hover{
+    text-decoration: none;
+
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.back-to-all-notes-btn{
+    font-size: 1.1em;
+
+    margin: 15px 3px 3px 3px;
+    padding: 5px 3px 5px 3px;
+    border: 1px solid rgb(111, 57, 182, 0.5);
+    
+    background-color:rgb(246, 241, 250);
+
+    cursor: pointer;
+}
+
+.back-to-all-notes-btn:hover{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.footer-container{
+    color: whitesmoke;
+    background-image: url(/assets/header-background-img.jpg);
+}
+
+.fa-brands:hover{
+    color: rgb(88, 216, 216);
+}
 
 /* functionality */
+
+/* content displaying */
 
 .toggle-display-none{
     display: none;
@@ -223,33 +324,12 @@ p{
     display: none;
 }
 
-/* specificity */
+/* toggle dimploms photos */
 
-.main-container{
-    background-image: url(/assets/main-background.png) no-repeat center ;
-}
-
-.nav-btn{
-    cursor: pointer;
-    border: 1px solid rgb(111, 57, 182, 0.5);
-    padding: 5px 3px 5px 3px;
-}
-
-.nav-btn:hover{
-    cursor: pointer;
-    color: whitesmoke;
-    background-color: rgb(111, 57, 182, 0.8);
-    transform: scale(1.04);
-}
-
-.footer-container{
-    /* background-color: rgba(43, 16, 78, 0.8);
-    color: whitesmoke;
-    padding: 20px; */
-    color: whitesmoke;
-    background-image: url(/assets/header-background-img.jpg);
-}
-
-.fa-brands:hover{
-    color: rgb(88, 216, 216);
+.expanded{
+    position: absolute;
+    top: 0;
+    left: 32.5%;
+    width: 35%;
+    height: 35%;
 }
