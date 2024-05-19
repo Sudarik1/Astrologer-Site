@@ -9,14 +9,13 @@ console.log(applicationForm)
 // grab "pages" content 
 const toggleContentDisplayBtnArray = document.querySelectorAll('.nav-btn');
 
-// grab dimploms photos
-const dimplomPhotoArray = document.querySelectorAll('.diplom-photo')
-
 // grab of notes
 const notesList = document.getElementById("notes-list");
 const fullNoteContainer = document.getElementById("full-note-container");
 const backToAllNotesBtn = document.getElementById('back-to-all-notes-btn')
 
+// grab dimploms photos
+const dimplomPhotoArray = document.querySelectorAll('.diplom-photo')
 
 // display "pages" content 
 
@@ -26,6 +25,8 @@ toggleContentDisplayBtnArray.forEach(button => {
 });
 
 function toggleContentDisplay(e) {
+    restoreNotePage()
+
     // Get the target section ID from the button's data attribute
     const targetSectionId = e.target.getAttribute('data-target');
     
@@ -42,20 +43,12 @@ function toggleContentDisplay(e) {
     }
 }
 
-// expand dimploms photos
+function restoreNotePage(){
+    displayNotes()
+    hideFullNote()
+    backToAllNotesBtn.classList.add('hidden')
+}
 
-dimplomPhotoArray.forEach(photo =>{
-    photo.addEventListener('click', ()=> {
-        if (photo.classList.contains('expanded')){
-            photo.classList.remove('expanded')
-        }
-        else {
-            dimplomPhotoArray.forEach(photo => photo.classList.remove('expanded'))
-            photo.classList.add('expanded')
-        }
-        
-    })
-})
 // display notes
 
 function getFeedNotesListHtml(){
@@ -100,6 +93,7 @@ function getFeedFullNoteHtml(note){
 }
 
 function displayFullNote(note) {
+    document.getElementById('full-note-container').classList.remove('hidden')
     fullNoteContainer.innerHTML = getFeedFullNoteHtml(note);
     backToAllNotesBtn.classList.toggle('hidden')
     hideNotes()
@@ -122,7 +116,20 @@ function showAllNotes(){
 }
 
 function hideFullNote(){
-    const fullNote = document.getElementById('full-note-container')
-    fullNote.classList.add('hidden')
+    document.getElementById('full-note-container').classList.add('hidden')
 }
 
+// expand dimploms photos
+
+dimplomPhotoArray.forEach(photo =>{
+    photo.addEventListener('click', ()=> {
+        if (photo.classList.contains('expanded')){
+            photo.classList.remove('expanded')
+        }
+        else {
+            dimplomPhotoArray.forEach(photo => photo.classList.remove('expanded'))
+            photo.classList.add('expanded')
+        }
+        
+    })
+})

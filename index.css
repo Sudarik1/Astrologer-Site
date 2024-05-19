@@ -149,11 +149,25 @@ button{
 .content-container{
     display: flex;
     justify-content: center;
-    
+
     width: 75%;
     max-height: 700px;
     
     overflow-y: auto;
+}
+
+.birthday-map-photo-container{
+    display: block;
+    
+    margin: 10px auto;
+
+    width: 40%;
+}
+
+.birthday-map-photo{
+    display: block;
+
+    width: 100%;
 }
 
 .astroleger-page-photo-container-parent{
