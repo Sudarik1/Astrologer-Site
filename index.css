@@ -240,8 +240,8 @@ button{
 .form-btn:hover{
     background-color: rgb(114, 188, 218);
 
-    transform: scale(111.15);
-    transition: transform 110.5s ease;
+    transform: scale(1.15);
+    transition: transform 0.5s ease;
 }
 
 .main-container{
