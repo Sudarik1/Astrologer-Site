@@ -28,35 +28,29 @@
                     <h1 class="increase-contrast" >Гуманистическая <br> астрология</h1>
                 </div>
 
-                <div class="application-form increase-contrast" >
-                    <form class="form-container" id="application-form"> 
-                        <div class="form-input-container">
-                            <!-- <h4 class="form-header">Подать заявку</h4> -->
-                            <div>
-                                <label for="user-name" class="increase-contrast" >Ваше имя</label>
-                                <input type="text" id="user-name" name="user-name" placeholder="Ваше имя (по желанию)">
-                            </div>
-                            
-                            <div>
-                                <label for="user-email" class="increase-contrast" >Ваша почта</label><br>
-                                <input type="email" id="user-email" name="user-email" placeholder="Ваша почта">
-                            </div>
-                            
-                            <div>
-                                <label for="user-phone" class="increase-contrast" >Телефон:</label><br>
-                                <input type="phone" id="user-phone" name="user-phone" placeholder="Укажите по желанию"><br>
-                            </div>
-                                 
+                <form class="application-form increase-contrast" id="application-form"> 
+                    <div class="form-input-container">
+                        <div>
+                            <label for="user-name" class="increase-contrast" >Ваше имя</label>
+                            <input class="form-input" type="text" id="user-name" name="user-name" placeholder="Ваше имя (по желанию)">
                         </div>
                         
                         <div>
-                            
-                            <!-- <input type="submit" value="Отправить заявку"> -->
-                            <button class="form-btn">Подать заявку</button>
+                            <label for="user-email" class="increase-contrast" >Ваша почта</label>
+                            <input class="form-input" type="email" id="user-email" name="user-email" placeholder="Ваша почта">
                         </div>
                         
-                    </form>
-                </div>
+                        <div>
+                            <label for="user-phone" class="increase-contrast" >Телефон</label>
+                            <input class="form-input" type="phone" id="user-phone" name="user-phone" placeholder="Укажите по желанию">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <button class="form-btn">Подать заявку</button>
+                    </div>  
+                </form>
+
             </div>
             
         </header>
@@ -64,7 +58,7 @@
         <main class="main-container">
 
             <section class="nav-container">
-                <div class="link-container">
+                <nav class="link-container">
                     <button class="nav-btn" data-target="content-main">Главная</button>
                     <button class="nav-btn" data-target="content-birthday-map">Карта рождения</button>
                     <button class="nav-btn" data-target="content-prediction">Предсказательная астрология</button>
@@ -80,7 +74,7 @@
                     <button class="nav-btn" data-target="content-notes">Астрологические заметки</button>
                     <button class="nav-btn" data-target="content-astrologer">Ваш астролог</button>
                     <button class="nav-btn" data-target="content-guest-room">Гостевая</button>
-                </div>  
+                </nav>  
             </section>
 
             <section class="content-container">
@@ -395,19 +389,20 @@
                     <p class="footer-paragraph">Вайбер: +7 960 511 36 98</p>
                 </div>
 
-                <div class="footer-icon-description-container">
-                    <p class="footer-paragraph">Skype: sergey49699</p>
-                    <p class="footer-paragraph">Telegram: +7 960 511 36 98</p>
-                    <p class="footer-paragraph">WhatsApp: +7 960 511 36 98</p>
+                <div class="footer-contact-with-icon-container">
+                    <div class="footer-icon-description-container">
+                        <p class="footer-paragraph">Skype: sergey49699</p>
+                        <p class="footer-paragraph">Telegram: +7 960 511 36 98</p>
+                        <p class="footer-paragraph">WhatsApp: +7 960 511 36 98</p>
+                    </div>
+    
+                    <div class="footer-icon-container">
+                        <i class="fa-brands fa-skype"></i>
+                        <i class="fa-brands fa-telegram"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
                 </div>
 
-                <div class="footer-icon-container">
-                    <i class="fa-brands fa-skype"></i>
-                    <i class="fa-brands fa-telegram"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                </div>
-
-                
             </div>
 
         </footer>
