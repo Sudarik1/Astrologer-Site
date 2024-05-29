@@ -1,8 +1,6 @@
 
 // set up
 
-import { notes } from "./data.js";
-
 // database
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
