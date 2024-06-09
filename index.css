@@ -101,6 +101,28 @@ button{
 
 }
 
+.form-input-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-input{
+    display: block;
+
+}
+
+.form-btn{
+    display: block;
+
+    font-size: 1.15em;
+
+    padding: 5px;
+    
+    border-radius: 10%;
+    max-width: 100px;
+}
 
 @media screen and (max-width: 1300px){
     .logo-header{
@@ -127,25 +149,18 @@ button{
     }
 }
 
-.form-input-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-}
+@media screen and (max-width: 500px){
+    .header-container{
+        height: 600px;
+    }
+    .logo-header{
+        flex-direction: column;
+    }
+    .application-form{
+        flex-direction: column;
+        gap: 30px;
+    }
 
-.form-input{
-    display: block;
-
-}
-
-.form-btn{
-    font-size: 1.15em;
-
-    padding: 5px;
-    
-    border-radius: 10%;
-    max-width: 100px;
 }
 
 .main-container{
@@ -179,6 +194,8 @@ button{
 }
 
 .content-container{
+    margin: 8px 0;
+
     display: flex;
     justify-content: center;
 
@@ -228,11 +245,60 @@ button{
     width: 100%;
 }
 
+@media screen and (max-width: 1000px){
+    .astroleger-page-photo-container-parent{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .astroleger-page-photo-container-child{
+        width: 75%;
+        height: 75%;
+    }
+}
+
+.guest-room-container{
+    width: 90%;
+}
+
+.guest-room-header{
+    font-size: 1.15em;
+    font-weight: normal;
+}
+
+.guest-room-rendered-comment{
+    margin: 1.5em 0;
+}
+
+.guest-room-comment-user-name{
+    margin: 5px 0;
+
+    font-size: 1.5em;
+}
+
+.guest-room-comment-user-text{
+    margin: 0;
+
+    font-size: 1em; 
+}
+
+.guest-room-input-comment{
+    width: 75%;
+    height: 10em;
+
+    font-size: 1.05em;
+}
+
+.guest-room-input-user-name{
+    font-size: 0.95em;
+}
+
 .footer-paragraph{
     margin: 0;
 }
 
 .footer-container{
+    padding: 20px 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,7 +325,6 @@ button{
 @media screen and (max-width: 700px){
     .footer-container{
         flex-direction: column;
-        
     }
     .footer-contact-container{
         text-align: center;
@@ -273,8 +338,6 @@ button{
 }
 
 .footer-icon-description-container{
-    width: 300px;
-
     text-align: left;
     align-self: stretch;
     
@@ -361,7 +424,7 @@ button{
     transform: scale(1.04);
 }
 
-.back-to-all-notes-btn{
+.content-btn{
     font-size: 1.1em;
 
     margin: 15px 3px 3px 3px;
@@ -373,7 +436,7 @@ button{
     cursor: pointer;
 }
 
-.back-to-all-notes-btn:hover{
+.content-btn:hover{
     color: whitesmoke;
     background-color: rgb(111, 57, 182, 0.8);
 
@@ -383,6 +446,10 @@ button{
 .footer-container{
     color: whitesmoke;
     background-image: url(/assets/header-background-img.jpg);
+}
+
+.fa-brands{
+    color: whitesmoke;
 }
 
 .fa-brands:hover{

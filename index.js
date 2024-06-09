@@ -17,13 +17,9 @@ const dataApp = initializeApp(databaseSettings)
 const database = getDatabase(dataApp)
 
 const notesDatabase = ref(database, "notes")
-const applicationsDatabase = ref(database, "applications")
 const usersCommentsDatabase = ref(database, 'comments')
 
 // application form 
-const userName = document.getElementById("user-name");
-const userEmail = document.getElementById("user-email");
-const userPhone = document.getElementById("user-phone");
 const applicationForm = document.getElementById("application-form");
 
 // pages content 
@@ -34,39 +30,29 @@ const notesList = document.getElementById("notes-list");
 const fullNoteContainer = document.getElementById("full-note-container");
 const backToAllNotesBtn = document.getElementById('back-to-all-notes-btn')
 
-// users comments
+// astrologer's dimploms photos
+const dimplomPhotoArray = document.querySelectorAll('.diplom-photo')
+
+// guest room users comments
 const guestRoomCommentForm = document.getElementById("guest-room-comment-form");
 const commentsContainer = document.getElementById("comments-container")
-
-// dimploms photos
-const dimplomPhotoArray = document.querySelectorAll('.diplom-photo')
 
 // event listeners
 
 //form submission
 applicationForm.addEventListener("submit", function(event) {
 
+    const validationErrors = checkApplicationFormValidation();
     event.preventDefault();
-
-    const userNameValue = userName.value.trim();
-    const userEmailValue = userEmail.value.trim();
-    const userPhoneValue = userPhone.value.trim();
-
-    if (!userEmailValue && !userPhoneValue) {
-        alert("Пожалуйста, введите номер телефона или адрес электронной почты");
-        return;
+    
+    if (validationErrors.length > 0){
+        alert(validationErrors.join('\n'));
+    } else {
+        alert("Ваша заявка отправлена!");
     }
 
-    const newApplicationRef = push(applicationsDatabase);
-    set(newApplicationRef, {
-        name: userNameValue,
-        email: userEmailValue,
-        phone: userPhoneValue
-    });
-
-    alert("Application submitted successfully!");
-
     applicationForm.reset();
+
 });
 
 // pages content 
@@ -104,25 +90,25 @@ dimplomPhotoArray.forEach(photo =>{
 
 //comments
 guestRoomCommentForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+
+    const validationErrors = checkGuestRoomUserCommentValidation();
 
     const userNameValue = document.getElementById("guest-room-user-name").value.trim();
-    const commentValue = document.getElementById("comment").value.trim();
+    const userCommentValue = document.getElementById("guest-room-user-comment").value.trim();
 
-    if (!userNameValue || !commentValue) {
-        alert("Please fill in both your name and comment.");
-        return;
-    }
-
-    const newCommentRef = push(usersCommentsDatabase);
-    set(newCommentRef, {
-        name: userNameValue,
-        comment: commentValue
-    });
-
-    alert("Comment submitted successfully!");
-
+    event.preventDefault();
+    if (validationErrors.length > 0){
+        alert(validationErrors.join('\n'));
+    } else {
+        const newCommentRef = push(usersCommentsDatabase);
+        set(newCommentRef, {
+            name: userNameValue,
+            comment: userCommentValue
+        });
+    alert("Благодарю за отзыв. Ваш комментарий успешно отправлен!");
     guestRoomCommentForm.reset();
+    } 
+    
 });
 
 //render to DOM
@@ -228,13 +214,72 @@ function fetchAndDisplayComments() {
             const userName = commentsObject[key].name;
             const comment = commentsObject[key].comment;
             feedHtml += `
-                <div class='rendered-comment comment-link-style' data-key="${key}">
-                    <h2 class="comment-user">${userName}</h2>
-                    <p class="comment-text">${comment}</p>
+                <div class='guest-room-rendered-comment comment-link-style' data-key="${key}">
+                    <h3 class="guest-room-comment-user-name">${userName}</h3>
+                    <p class="guest-room-comment-user-text">${comment}</p>
                 </div>
             `;
         }
 
         commentsContainer.innerHTML = feedHtml;
     });
+}
+
+
+// validation
+function checkApplicationFormValidation() {
+   
+    const userName = document.getElementById('user-name').value;
+    const userEmail = document.getElementById('user-email').value;
+    const userPhone = document.getElementById('user-phone').value;
+
+    const nameValidationPattern = /^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$/;
+    const emailValidationPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneValidationPattern = /^\+?[0-9\s\-]{7,15}$/;
+
+    let errorsArray = [];
+
+    if (userName && !nameValidationPattern.test(userName)) {
+        errorsArray.push('Пожалуйста, проверьте корректность указания имени.');
+    }
+    if (userEmail && !emailValidationPattern.test(userEmail)) {
+        errorsArray.push('Пожалуйста, проверьте корректность указания электронной почты.');
+    }
+    if (userPhone && !phoneValidationPattern.test(userPhone)) {
+        errorsArray.push('Пожалуйста, проверьте корректность указания номера телефона.');
+    }
+    if (!userEmail && !userPhone) {
+        errorsArray.push('Пожалуйста, укажите номер телефона или адрес электронной почты');
+    }
+
+    return errorsArray;
+}
+
+function checkGuestRoomUserCommentValidation(){
+    
+    const userName = document.getElementById("guest-room-user-name").value.trim();
+    const userComment = document.getElementById("guest-room-user-comment").value.trim();
+
+    const commentValidationPattern = /^[a-zA-Z0-9\s.,?!'"\-]{1,500}$/;
+    const nameValidationPattern = /^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$/;
+
+    let errorsArray = [];
+
+    if (!userName && !userComment){
+        errorsArray.push("Пожалуйста, укажите Ваше имя и оставьте комментарий.")
+    }
+    else if (!userComment){
+        errorsArray.push("Пожалуйста, оставьте Ваш комментарий.")
+    }
+    else if (!userName) {
+        errorsArray.push("Пожалуйста, укажите Ваше имя.");
+    }
+    else if (userName && !nameValidationPattern.test(userName)) {
+        errorsArray.push('Пожалуйста, проверьте корректность указания имени.');
+    }
+    else if (userComment && !commentValidationPattern.test(userComment)){
+        errorsArray.push("Ваш комментарий слишком длинный или содержит неприемлимые символы.")
+    }
+
+    return errorsArray;
 }

@@ -34,17 +34,35 @@
                     <div class="form-input-container">
                         <div>
                             <label for="user-name" class="increase-contrast" >Ваше имя</label>
-                            <input class="form-input" type="text" id="user-name" name="user-name" placeholder="Ваше имя (по желанию)">
+                            <input 
+                                class="form-input" 
+                                type="text" 
+                                id="user-name" 
+                                name="user-name" 
+                                placeholder="Укажите по желанию"
+                                pattern="^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$"
+                                >
                         </div>
                         
                         <div>
                             <label for="user-email" class="increase-contrast" >Ваша почта</label>
-                            <input class="form-input" type="email" id="user-email" name="user-email" placeholder="Ваша почта">
+                            <input 
+                                class="form-input"
+                                type="email" id="user-email" 
+                                name="user-email" 
+                                placeholder="Ваша почта"
+                                >
                         </div>
                         
                         <div>
                             <label for="user-phone" class="increase-contrast" >Телефон</label>
-                            <input class="form-input" type="phone" id="user-phone" name="user-phone" placeholder="Укажите по желанию">
+                            <input 
+                                class="form-input" 
+                                type="phone" 
+                                id="user-phone" 
+                                name="user-phone" 
+                                placeholder="Укажите по желанию"
+                                >
                         </div>
                     </div>
                     
@@ -297,7 +315,7 @@
                       <div class="full-note-container" id="full-note-container"></div> <!-- Container for full note content -->
 
                       <div id="back-to-all-notes">
-                        <button class="back-to-all-notes-btn hidden" id="back-to-all-notes-btn">Вернуться ко всем заметкам</button>
+                        <button class="content-btn hidden" id="back-to-all-notes-btn">Вернуться ко всем заметкам</button>
                       </div>
 
                 </div>
@@ -353,28 +371,26 @@
                 </div>
 
                 <!-- guest-room page -->
-                <div class="toggle-display-none" id="content-guest-room">
-                    <p>Комментарии пользователей до Вас</p>
+                <div class="guest-room-container toggle-display-none" id="content-guest-room">
+                    <h2 class="guest-room-header">Комментарии пользователей до Вас</h2>
     
-                    <div class="comments-container" id="comments-container"></div>
-                    <p>
-                        <form class="guest-room-form-container" id="guest-room-comment-form">
-                            <div class="guest-room-form-input-container">                              
-                                <div>
-                                    <label for="guest-room-comment" class="increase-contrast"></label><br>
-                                    <textarea id="comment" name="guest-room-comment" placeholder="Поделитесь своими впечатлениями здесь" required></textarea><br>
-                                </div>
-                                <div>
-                                    <label for="guest-room-user-name" class="increase-contrast"></label>
-                                    <input type="text" id="guest-room-user-name" name="guest-room-user-name" placeholder="Ваше имя" required>
-                                </div>                      
-                            </div>
-                        
+                    <div class="guest-room-comments-container" id="comments-container"></div>
+                    <form class="guest-room-form-container" id="guest-room-comment-form" novalidate>
+                        <div class="guest-room-form-input-container">                              
                             <div>
-                                <button type="submit" class="guest-room-form-btn">Отправить отзыв</button>
+                                <label for="guest-room-user-comment" class="increase-contrast"></label><br>
+                                <textarea class="guest-room-input-comment" id="guest-room-user-comment" name="guest-room-user-comment" placeholder="Поделитесь своими впечатлениями здесь" required></textarea><br>
                             </div>
-                        </form>
-                    </p>
+                            <div>
+                                <label for="guest-room-user-name" class="increase-contrast"></label>
+                                <input type="text" class="guest-room-input-user-name" id="guest-room-user-name" name="guest-room-user-name" placeholder="Ваше имя" required>
+                            </div>                      
+                        </div>
+                    
+                        <div>
+                            <button type="submit" class="content-btn">Оставить комментарий</button>
+                        </div>
+                    </form>
                 </div>
 
             </section>
@@ -399,9 +415,15 @@
                     </div>
     
                     <div class="footer-icon-container">
-                        <i class="fa-brands fa-skype"></i>
-                        <i class="fa-brands fa-telegram"></i>
-                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://join.skype.com/invite/uACflyAOz4hn" target="_blank" aria-label="icon of the Skype link">
+                            <i class="fa-brands fa-skype"></i>
+                        </a>
+                        <a href="https://t.me/your_telegram_username" target="_blank" aria-label="icon of the Telegram link">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/+79605113698" target="_blank" aria-label="icon of the WhatsApp link">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
 
