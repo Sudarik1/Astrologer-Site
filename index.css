@@ -456,6 +456,10 @@ button{
     color: rgb(88, 216, 216);
 }
 
+.mail-link-footer:hover{
+    cursor: pointer;
+}
+
 /* functionality */
 
 /* content displaying */
@@ -481,3 +485,5 @@ button{
     width: 35%;
     height: 35%;
 }
+
+/* copy link to clipboard */

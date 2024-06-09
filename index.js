@@ -37,6 +37,9 @@ const dimplomPhotoArray = document.querySelectorAll('.diplom-photo')
 const guestRoomCommentForm = document.getElementById("guest-room-comment-form");
 const commentsContainer = document.getElementById("comments-container")
 
+// footer's link
+const mailLinkFooter = document.getElementById("mail-link-footer")
+
 // event listeners
 
 //form submission
@@ -108,6 +111,17 @@ guestRoomCommentForm.addEventListener("submit", function(event) {
     alert("Благодарю за отзыв. Ваш комментарий успешно отправлен!");
     guestRoomCommentForm.reset();
     } 
+    
+});
+
+// footer's link
+mailLinkFooter.addEventListener('click', function() {
+    
+    const mailToCopy = 's-olonichev@yandex.ru';
+
+    navigator.clipboard.writeText(mailToCopy)
+    
+    alert("Адрес электронной почты скопирован в буфер обмена")
     
 });
 
