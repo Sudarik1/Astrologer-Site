@@ -39,8 +39,12 @@ h4{
 }
 
 p{
-    font-size: 1.1em;
+    font-size: 1.45em;
     margin: 15px 0 0 0;
+}
+
+.footer-paragraph{
+    font-size: 1.1em;
 }
 
 label{
@@ -217,7 +221,7 @@ button{
 .birthday-map-photo-container{
     display: block;
     
-    margin: 10px auto;
+    margin: 20px auto;
 
     width: 40%;
 }
