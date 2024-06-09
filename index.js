@@ -122,7 +122,7 @@ mailLinkFooter.addEventListener('click', function() {
     navigator.clipboard.writeText(mailToCopy)
     
     alert("Адрес электронной почты скопирован в буфер обмена")
-    
+
 });
 
 //render to DOM
@@ -274,7 +274,7 @@ function checkGuestRoomUserCommentValidation(){
     const userName = document.getElementById("guest-room-user-name").value.trim();
     const userComment = document.getElementById("guest-room-user-comment").value.trim();
 
-    const commentValidationPattern = /^[a-zA-Z0-9\s.,?!'"\-]{1,500}$/;
+    const commentValidationPattern = /^[a-zA-Zа-яА-ЯёЁ0-9\s.,?!'"\-]{1,500}$/;
     const nameValidationPattern = /^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$/;
 
     let errorsArray = [];
