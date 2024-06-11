@@ -10,7 +10,7 @@ import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/fi
 
 // database
 const databaseSettings = {
-    databaseURL: "https://astrologer-site-default-rtdb.asia-southeast1.firebasedatabase.app"
+    databaseURL: "https://gumastro-40785-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
 const dataApp = initializeApp(databaseSettings)
@@ -18,6 +18,7 @@ const database = getDatabase(dataApp)
 
 const notesDatabase = ref(database, "notes")
 const usersCommentsDatabase = ref(database, 'comments')
+const usersApplicationDatabase = ref(database, 'applications')
 
 // application form 
 const applicationForm = document.getElementById("application-form");
@@ -47,13 +48,23 @@ applicationForm.addEventListener("submit", function(event) {
 
     const validationErrors = checkApplicationFormValidation();
     event.preventDefault();
+
+    const userName = document.getElementById('user-name').value;
+    const userEmail = document.getElementById('user-email').value;
+    const userPhone = document.getElementById('user-phone').value;
     
     if (validationErrors.length > 0){
         alert(validationErrors.join('\n'));
     } else {
-        alert("Ваша заявка отправлена!");
+        const newApplicationRef = push(usersApplicationDatabase);
+        set(newApplicationRef, {
+            name: userName,
+            email: userEmail,
+            phone: userPhone
+        });
     }
 
+    alert("Ваша заявка отправлена!");
     applicationForm.reset();
 
 });
