@@ -218,18 +218,20 @@ button{
     }
 }
 
-.birthday-map-photo-container{
+.content-photo-container{
     display: block;
     
     margin: 20px auto;
 
     width: 40%;
+    
 }
 
-.birthday-map-photo{
+.content-photo{
     display: block;
 
     width: 100%;
+    
 }
 
 .astroleger-page-photo-container-parent{
