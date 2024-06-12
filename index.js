@@ -6,11 +6,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
+
 // grabbing of elements
 
 // database
 const databaseSettings = {
-    databaseURL: "https://gumastro-40785-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://astrologer-site-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
 
 const dataApp = initializeApp(databaseSettings)
@@ -19,6 +20,10 @@ const database = getDatabase(dataApp)
 const notesDatabase = ref(database, "notes")
 const usersCommentsDatabase = ref(database, 'comments')
 const usersApplicationDatabase = ref(database, 'applications')
+
+// header's motto line breaks
+const mediaQuery1000 = window.matchMedia("(max-width: 1000px)");
+const mediaQuery1320 = window.matchMedia("(max-width: 1320px)");
 
 // application form 
 const applicationForm = document.getElementById("application-form");
@@ -32,7 +37,7 @@ const fullNoteContainer = document.getElementById("full-note-container");
 const backToAllNotesBtn = document.getElementById('back-to-all-notes-btn')
 
 // astrologer's dimploms photos
-const dimplomPhotoArray = document.querySelectorAll('.diplom-photo')
+const diplomPhotoArray = document.querySelectorAll('.diplom-photo')
 
 // guest room users comments
 const guestRoomCommentForm = document.getElementById("guest-room-comment-form");
@@ -41,7 +46,13 @@ const commentsContainer = document.getElementById("comments-container")
 // footer's link
 const mailLinkFooter = document.getElementById("mail-link-footer")
 
+
+
 // event listeners
+
+// header's motto line breaks
+mediaQuery1000.addEventListener("change", handleMediaQueryChange1000)
+mediaQuery1320.addEventListener("change", handleMediaQueryChange1320);
 
 //form submission
 applicationForm.addEventListener("submit", function(event) {
@@ -89,17 +100,8 @@ function addEventListenerToNotes() {
 backToAllNotesBtn.addEventListener('click', showAllNotes)
 
 //diploms photos
-
-dimplomPhotoArray.forEach(photo =>{
-    photo.addEventListener('click', ()=> {
-        if (photo.classList.contains('expanded')){
-            photo.classList.remove('expanded')
-        }
-        else {
-            dimplomPhotoArray.forEach(photo => photo.classList.remove('expanded'))
-            photo.classList.add('expanded')
-        }
-    })
+diplomPhotoArray.forEach(photo =>{
+    photo.addEventListener('click', handleDiplomsPhotoExpansion) 
 })
 
 //comments
@@ -135,6 +137,8 @@ mailLinkFooter.addEventListener('click', function() {
     alert("Адрес электронной почты скопирован в буфер обмена")
 
 });
+
+
 
 //render to DOM
 
@@ -229,6 +233,18 @@ function showAllNotes(){
     hideFullNote()
 }
 
+// diploms expansion
+function handleDiplomsPhotoExpansion(event){
+    const clickedPhotoDiv = event.target.parentElement;
+    
+        if (clickedPhotoDiv.classList.contains('expanded')){
+            clickedPhotoDiv.classList.remove('expanded');
+        } else {
+            diplomPhotoArray.forEach(photo => photo.classList.remove('expanded'));
+            clickedPhotoDiv.classList.add('expanded');
+        }
+}
+
 //users comments
 function fetchAndDisplayComments() {
     onValue(usersCommentsDatabase, function(snapshot) {
@@ -250,6 +266,51 @@ function fetchAndDisplayComments() {
     });
 }
 
+// adaptivity
+function handleMediaQueryChange1000(event) {
+    handleMottoLineBreaks(event)
+    disableDiplomsPhotoExpand(event)
+}
+
+// header's motto line breaks
+function handleMottoLineBreaks(event) {
+    const mottoHeaderLineBreak = Array.from(document.getElementsByClassName("motto-header-line-break"))
+    if (event.matches) {
+        mottoHeaderLineBreak.forEach(br => br.style.display = 'inline');
+    } else {
+        mottoHeaderLineBreak.forEach(br => br.style.display = 'none');
+    }
+}
+handleMediaQueryChange1000(mediaQuery1000)
+
+function handleMediaQueryChange1320(event) {
+    const mottoHeaderLineBreak = Array.from(document.getElementsByClassName("motto-header-line-break"))
+
+    if (event.matches) {
+        mottoHeaderLineBreak.forEach(br => br.style.display = 'none');
+    } else {
+        mottoHeaderLineBreak.forEach(br => br.style.display = 'inline');
+    }
+}
+handleMediaQueryChange1320(mediaQuery1320);
+
+// diploms photo expansion
+function disableDiplomsPhotoExpand(event) {
+    if (event.matches) {
+        diplomPhotoArray.forEach (photo =>
+            photo.removeEventListener('click', handleDiplomsPhotoExpansion)
+        )
+    }
+    else {
+        diplomPhotoArray.forEach (photo =>
+            photo.addEventListener('click', handleDiplomsPhotoExpansion)
+        )
+    }
+}
+
+
+
+// other
 
 // validation
 function checkApplicationFormValidation() {

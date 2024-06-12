@@ -1,4 +1,10 @@
 
+/* fonts */
+/* @font-face {
+    font-family: Astrology;
+    src: url(/assets/avita.black.otf);
+} */
+
 /* temporal utilities */
 
 .border{
@@ -39,8 +45,12 @@ h4{
 }
 
 p{
+    /* font-family: Astrology; */
+
     font-size: 1.45em;
     margin: 15px 0 0 0;
+
+    text-align: justify;
 }
 
 .footer-paragraph{
@@ -61,10 +71,11 @@ button{
 
 /* layout */
 
-.header-container{
+.header-content-container{
     display: flex;
     align-items: center;
     justify-content:space-evenly;
+    gap: 2.5em;
 
     height: 250px;
 
@@ -74,12 +85,27 @@ button{
     color: aliceblue;
 }
 
+.logo-form-header-container{
+    display: flex;
+    justify-content: space-between;
+
+    gap: 4em;
+}
+
+.motto-header{
+    /* display: block;
+ */
+    font-size: 1.25em;
+
+    margin: 0px;
+}
+
 .logo-header{
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
 
-    width: 65%;
+    gap: 1em;
 }
 
 .logo-img{
@@ -88,8 +114,6 @@ button{
     width: 100%;
     max-width: 100px;
     
-    margin-right: 3%;
-
     border-radius: 100%;
 }
 
@@ -97,12 +121,10 @@ button{
     font-size: 0.9em;
     
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
-    gap: 7.5%;
 
-    width: 25%;
-
+    gap: 1.5em;
 }
 
 .form-input-container{
@@ -114,7 +136,6 @@ button{
 
 .form-input{
     display: block;
-
 }
 
 .form-btn{
@@ -128,41 +149,53 @@ button{
     max-width: 100px;
 }
 
-@media screen and (max-width: 1300px){
-    .logo-header{
-        width: 60%;
-    }
-}
+@media screen and (max-width: 1320px){
+    .header-content-container{
+        flex-direction: column;
 
-@media screen and (max-width: 1120px){
-    .logo-header{
-        width: 50%;
-    }
+        height: 400px;
+        row-gap: 10px;
+    }    
 }
 
 @media screen and (max-width: 1000px){
-    .header-container{
+    .header-content-container{
         flex-direction: column;
-        height: 500px;
+        justify-content: center;
+        height: 600px;
+        row-gap: 10px;
     }
-    .logo-header{
-        width: auto;
+    .logo-form-header-container{
+        flex-direction: column;
+
+        gap: 0px;
     }
     .application-form{
-        width: auto;
+        justify-content: center;
+        gap: 1em;
     }
 }
 
 @media screen and (max-width: 500px){
-    .header-container{
-        height: 600px;
+    h1{
+        font-size: 1.5em;
+    }
+
+    .header-content-container{
+        height: 700px;
+        row-gap: 20px;
     }
     .logo-header{
         flex-direction: column;
+
+        gap: 0px;
     }
     .application-form{
         flex-direction: column;
-        gap: 30px;
+        gap: 1.5em;
+    }
+    .motto-header{
+        font-size: 0.6em;
     }
 
 }
@@ -400,6 +433,10 @@ button{
     transform: scale(1.04);
 }
 
+.consultation-promotion{
+    text-align: center;
+}
+
 .full-note-container{
     margin-top: 15px;
 }
@@ -486,10 +523,16 @@ button{
 
 .expanded{
     position: absolute;
-    top: 0;
+    top: 30%;
     left: 32.5%;
     width: 35%;
     height: 35%;
+}
+
+@media screen and (max-width: 1320px){
+    .expanded{
+        top: 50%;
+    }
 }
 
 /* copy link to clipboard */
