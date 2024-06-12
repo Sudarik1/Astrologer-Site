@@ -11,7 +11,7 @@ import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/fi
 
 // database
 const databaseSettings = {
-    databaseURL: "https://astrologer-site-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    databaseURL: "https://gumastro-40785-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
 const dataApp = initializeApp(databaseSettings)
