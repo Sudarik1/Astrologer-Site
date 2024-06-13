@@ -215,12 +215,18 @@ button{
 
 }
 
+@media screen and (max-width: 400px){
+    p{
+        font-size: 1em;
+    }
+}
+
 .main-container{
     display: flex;
     justify-content: space-evenly;
     gap: 2%;
 
-    padding: 40px;
+    padding: 2.5em;
 }
 
 @media screen and (max-width: 900px) {
@@ -247,6 +253,7 @@ button{
 
 .content-container{
     margin: 8px 0;
+    padding-right: 2.5em;
 
     display: flex;
     justify-content: center;
@@ -258,6 +265,18 @@ button{
 }
 
 @media screen and (max-width: 900px) {
+    .content-container{
+        width: 100%;
+        max-height: none;
+
+        margin-top: 2%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .main-container{
+        margin: 2px;
+        padding: 0px;
+    }
     .content-container{
         width: 100%;
         max-height: none;
@@ -492,6 +511,11 @@ button{
     background-color:rgb(246, 241, 250);
 
     cursor: pointer;
+}
+@media screen and (max-width: 500px){
+    .content-btn{
+        font-size: 0.9em;
+    }
 }
 
 .content-btn:hover{
