@@ -93,8 +93,6 @@ button{
 }
 
 .motto-header{
-    /* display: block;
- */
     font-size: 1.25em;
 
     margin: 0px;
@@ -150,6 +148,12 @@ button{
 }
 
 @media screen and (max-width: 1320px){
+    p{
+        font-size: 1.25em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
     .header-content-container{
         flex-direction: column;
 
@@ -159,6 +163,12 @@ button{
 }
 
 @media screen and (max-width: 1000px){
+    p{
+        font-size: 1.1em;
+    }
+    h2{
+        font-size: 1.25em;
+    }
     .header-content-container{
         flex-direction: column;
         justify-content: center;
@@ -177,10 +187,15 @@ button{
 }
 
 @media screen and (max-width: 500px){
+    p{
+        font-size: 1em;
+    }
     h1{
         font-size: 1.5em;
     }
-
+    h2{
+        font-size: 1.25em;
+    }
     .header-content-container{
         height: 700px;
         row-gap: 20px;
