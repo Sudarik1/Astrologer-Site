@@ -195,7 +195,7 @@ function displayFullNoteByKey(key) {
             let feedHtml = `
                 <div id='full-note-container'>
                     <h2 class='note-title'>${note.header}</h2>
-                    <p>${note.text}</p>
+                    <p>${note.text.replace(/\n/g, '<br>')}</p>
             `;
             
             if (note.audio) {
@@ -257,7 +257,7 @@ function fetchAndDisplayComments() {
             feedHtml += `
                 <div class='guest-room-rendered-comment comment-link-style' data-key="${key}">
                     <h3 class="guest-room-comment-user-name">${userName}</h3>
-                    <p class="guest-room-comment-user-text">${comment}</p>
+                    <p class="guest-room-comment-user-text">${comment.replace(/\n/g, '<br>')}</p>
                 </div>
             `;
         }
@@ -346,7 +346,7 @@ function checkGuestRoomUserCommentValidation(){
     const userName = document.getElementById("guest-room-user-name").value.trim();
     const userComment = document.getElementById("guest-room-user-comment").value.trim();
 
-    const commentValidationPattern = /^[a-zA-Zа-яА-ЯёЁ0-9\s.,?!'"():\-]{1,1000}$/;
+    const commentValidationPattern = /^[a-zA-Zа-яА-ЯёЁ0-9\s.,?!'"():;\-]{1,1000}$/;
     const nameValidationPattern = /^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$/;
 
     let errorsArray = [];
