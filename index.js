@@ -346,7 +346,7 @@ function checkGuestRoomUserCommentValidation(){
     const userName = document.getElementById("guest-room-user-name").value.trim();
     const userComment = document.getElementById("guest-room-user-comment").value.trim();
 
-    const commentValidationPattern = /^[a-zA-Zа-яА-ЯёЁ0-9\s.,?!'"\-]{1,500}$/;
+    const commentValidationPattern = /^[a-zA-Zа-яА-ЯёЁ0-9\s.,?!'"():\-]{1,1000}$/;
     const nameValidationPattern = /^[a-zA-Zа-яА-ЯёЁ]+(([',. -][a-zA-Zа-яА-ЯёЁ ])?[a-zA-Zа-яА-ЯёЁ]*)*$/;
 
     let errorsArray = [];
