@@ -93,7 +93,7 @@ button{
 }
 
 .motto-header{
-    font-size: 1.25em;
+    font-size: 1.75vw;
 
     margin: 0px;
 }
@@ -147,92 +147,12 @@ button{
     max-width: 100px;
 }
 
-@media screen and (max-width: 1320px){
-    p{
-        font-size: 1.25em;
-    }
-    h2{
-        font-size: 1.5em;
-    }
-    .header-content-container{
-        flex-direction: column;
-
-        height: 400px;
-        row-gap: 10px;
-    }    
-}
-
-@media screen and (max-width: 1000px){
-    p{
-        font-size: 1.1em;
-    }
-    h2{
-        font-size: 1.25em;
-    }
-    .header-content-container{
-        flex-direction: column;
-        justify-content: center;
-        height: 600px;
-        row-gap: 10px;
-    }
-    .logo-form-header-container{
-        flex-direction: column;
-
-        gap: 0px;
-    }
-    .application-form{
-        justify-content: center;
-        gap: 1em;
-    }
-}
-
-@media screen and (max-width: 500px){
-    p{
-        font-size: 1em;
-    }
-    h1{
-        font-size: 1.5em;
-    }
-    h2{
-        font-size: 1.25em;
-    }
-    .header-content-container{
-        height: 700px;
-        row-gap: 20px;
-    }
-    .logo-header{
-        flex-direction: column;
-
-        gap: 0px;
-    }
-    .application-form{
-        flex-direction: column;
-        gap: 1.5em;
-    }
-    .motto-header{
-        font-size: 0.6em;
-    }
-
-}
-
-@media screen and (max-width: 400px){
-    p{
-        font-size: 1em;
-    }
-}
-
 .main-container{
     display: flex;
     justify-content: space-evenly;
     gap: 2%;
 
     padding: 2.5em;
-}
-
-@media screen and (max-width: 900px) {
-    .main-container{
-        flex-direction: column;
-    }
 }
 
 .nav-container{
@@ -262,27 +182,6 @@ button{
     max-height: 700px;
     
     overflow-y: auto;
-}
-
-@media screen and (max-width: 900px) {
-    .content-container{
-        width: 100%;
-        max-height: none;
-
-        margin-top: 2%;
-    }
-}
-@media screen and (max-width: 400px) {
-    .main-container{
-        margin: 2px;
-        padding: 0px;
-    }
-    .content-container{
-        width: 100%;
-        max-height: none;
-
-        margin-top: 2%;
-    }
 }
 
 .content-photo-container{
@@ -316,17 +215,6 @@ button{
     display: block;
     
     width: 100%;
-}
-
-@media screen and (max-width: 1000px){
-    .astroleger-page-photo-container-parent{
-        flex-direction: column;
-        gap: 30px;
-    }
-    .astroleger-page-photo-container-child{
-        width: 75%;
-        height: 75%;
-    }
 }
 
 .guest-room-container{
@@ -393,21 +281,6 @@ button{
     display: flex;
     justify-content: space-around;
     gap: 20px;
-}
-
-@media screen and (max-width: 700px){
-    .footer-container{
-        flex-direction: column;
-    }
-    .footer-contact-container{
-        text-align: center;
-        align-self: center;
-        gap: 20px;
-    }
-    .footer-contact-with-icon-container{
-        justify-content: center;
-        gap: 5px;
-    }
 }
 
 .footer-icon-description-container{
@@ -512,11 +385,7 @@ button{
 
     cursor: pointer;
 }
-@media screen and (max-width: 500px){
-    .content-btn{
-        font-size: 0.9em;
-    }
-}
+
 
 .content-btn:hover{
     color: whitesmoke;
@@ -568,10 +437,144 @@ button{
     height: 35%;
 }
 
+
+
+/* media queries */
+
+
 @media screen and (max-width: 1320px){
+    p{
+        font-size: 1.25em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    .header-content-container{
+        flex-direction: column;
+
+        height: 400px;
+        row-gap: 10px;
+    }
+    .motto-header{
+        font-size: 2.5vw;
+    }   
     .expanded{
         top: 50%;
     }
 }
 
-/* copy link to clipboard */
+@media screen and (max-width: 1000px){
+    p{
+        font-size: 1.1em;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+    .header-content-container{
+        flex-direction: column;
+        justify-content: center;
+        height: 600px;
+        row-gap: 10px;
+    }
+    .motto-header{
+        font-size: 2.75vw;
+    }  
+    .logo-form-header-container{
+        flex-direction: column;
+
+        gap: 0px;
+    }
+    .application-form{
+        justify-content: center;
+        gap: 1em;
+    }
+    .astroleger-page-photo-container-parent{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .astroleger-page-photo-container-child{
+        width: 75%;
+        height: 75%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-container{
+        flex-direction: column;
+    }
+    .motto-header{
+        font-size: 3.25vw;
+    }  
+    .content-container{
+        width: 100%;
+        max-height: none;
+
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .motto-header{
+        font-size: 4.25vw;
+    }  
+    .footer-container{
+        flex-direction: column;
+    }
+    .footer-contact-container{
+        text-align: center;
+        align-self: center;
+        gap: 20px;
+    }
+    .footer-contact-with-icon-container{
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    p{
+        font-size: 1em;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+    .header-content-container{
+        height: 700px;
+        row-gap: 20px;
+    }
+    .logo-header{
+        flex-direction: column;
+
+        gap: 0px;
+    }
+    .application-form{
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    .content-btn{
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 420px){
+    p{
+        font-size: 1em;
+    }
+    .motto-header{
+        font-size: 5.25vw;
+    }  
+    .main-container{
+        margin: 2px;
+        padding: 0px;
+    }
+    .content-container{
+        width: 75%;
+        max-height: none;
+        padding: 2.5em;
+
+        margin-top: 2%;
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "astrological-site-2",
+  "version": "1.0.0",
+  "description": "Astrological site server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env server.js"
+  },
+  "author": "\"Sudarik1\"",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase": "^10.12.3",
+    "firebase-admin": "^12.2.0",
+    "firebase-functions": "^5.0.1",
+    "nodemailer": "^6.9.14"
+  }
+}

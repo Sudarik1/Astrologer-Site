@@ -6,12 +6,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
-
-// grabbing of elements
+// grabbing elements
 
 // database
 const databaseSettings = {
-    databaseURL: "https://gumastro-40785-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://astrologer-site-default-rtdb.asia-southeast1.firebasedatabase.app"
 }
 
 const dataApp = initializeApp(databaseSettings)
@@ -54,6 +53,16 @@ const mailLinkFooter = document.getElementById("mail-link-footer")
 mediaQuery1000.addEventListener("change", handleMediaQueryChange1000)
 mediaQuery1320.addEventListener("change", handleMediaQueryChange1320);
 
+
+async function sendEmail(){
+    try {
+        const response = await fetch('http://localhost:8000/run-function');
+        const data = await response.text();
+        console.log(data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+}
 //form submission
 applicationForm.addEventListener("submit", function(event) {
 
@@ -73,6 +82,7 @@ applicationForm.addEventListener("submit", function(event) {
             email: userEmail,
             phone: userPhone
         });
+        sendEmail()
     }
 
     alert("Ваша заявка отправлена!");
