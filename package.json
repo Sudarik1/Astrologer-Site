@@ -2,11 +2,11 @@
   "name": "astrological-site-2",
   "version": "1.0.0",
   "description": "Astrological site server",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --env-file=.env controler/server.js"
+    "start": "node --env-file=.env server.js"
   },
   "author": "\"Sudarik1\"",
   "license": "ISC",

@@ -6,11 +6,10 @@ import http from "http"
 import fs from "fs/promises"
 import url from "url";
 import path from "path";
-import { URLSearchParams } from "url";
 
-import connectDB from "./db.js";
+import connectDB from "./controler/db.js";
 
-import Comment from "../model/commentModel.js";
+import Comment from "./model/commentModel.js";
 
 connectDB()
 
@@ -18,7 +17,7 @@ const PORT = process.env.PORT
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __controlerDirname = path.dirname(__filename)
-const __rootDirname = path.join(__controlerDirname, '..');
+const __rootDirname = __controlerDirname
 console.log(__filename, __controlerDirname, __rootDirname)
 
 
