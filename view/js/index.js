@@ -39,7 +39,7 @@ mediaQuery1320.addEventListener("change", handleMediaQueryChange1320);
 
 async function sendEmail(){
     try {
-        const response = await fetch('http://localhost:8000/send');
+        const response = await fetch('http://localhost:8000/sendMail');
         const data = await response.text();
         console.log(data);
       } catch (error) {

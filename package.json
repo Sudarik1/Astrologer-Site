@@ -11,10 +11,13 @@
   "author": "\"Sudarik1\"",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "firebase": "^10.12.3",
     "firebase-admin": "^12.2.0",
     "firebase-functions": "^5.0.1",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.3",
     "nodemailer": "^6.9.14"
   }
 }

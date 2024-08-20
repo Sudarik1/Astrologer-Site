@@ -1,0 +1,580 @@
+
+/* fonts */
+/* @font-face {
+    font-family: Astrology;
+    src: url(/assets/avita.black.otf);
+} */
+
+/* temporal utilities */
+
+.border{
+    border: 2px dotted rgb(50, 204, 19);
+}
+
+/* utilities */
+
+.increase-contrast{
+    text-shadow: 1px 1px 4px black;
+}
+
+.notes-font-weight{
+    font-weight: normal;
+}
+
+/* set up */
+
+body{
+    margin: 0;
+    
+    text-align: center;
+    font-size: 1.25em;
+}
+
+h1{
+    font-size: 2.1em;
+}
+
+h2{
+    font-size: 1.75em;
+    margin: 0px;
+}
+
+h4{
+    font-size: 1.75em;
+    margin: 0px;
+}
+
+p{
+    /* font-family: Astrology; */
+
+    font-size: 1.45em;
+    margin: 15px 0 0 0;
+
+    text-align: justify;
+}
+
+.footer-paragraph{
+    font-size: 1.1em;
+}
+
+label{
+    font-size: 1.25em;
+}
+
+input{
+    font-size: 1em;
+}
+
+button{
+    font-size: 0.9em;
+}
+
+/* layout */
+
+.header-content-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    gap: 2.5em;
+
+    height: 250px;
+
+    margin: 0;
+
+    background-image: url(/assets/header-background-img.jpg);
+    color: aliceblue;
+}
+
+.logo-form-header-container{
+    display: flex;
+    justify-content: space-between;
+
+    gap: 4em;
+}
+
+.motto-header{
+    font-size: 1.75vw;
+
+    margin: 0px;
+}
+
+.logo-header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    gap: 1em;
+}
+
+.logo-img{
+    display: block;
+
+    width: 100%;
+    max-width: 100px;
+    
+    border-radius: 100%;
+}
+
+.application-form{
+    font-size: 0.9em;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1.5em;
+}
+
+.form-input-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-input{
+    display: block;
+}
+
+.form-btn{
+    display: block;
+
+    font-size: 1.15em;
+
+    padding: 5px;
+    
+    border-radius: 10%;
+    max-width: 100px;
+}
+
+.main-container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2%;
+
+    padding: 2.5em;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-btn{
+    margin: 2px 0 2px 0;
+    padding: 5px 0 5px 0;
+}
+
+.link-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.content-container{
+    margin: 8px 0;
+    padding-right: 2.5em;
+
+    display: flex;
+    justify-content: center;
+
+    width: 75%;
+    max-height: 700px;
+    
+    overflow-y: auto;
+}
+
+.content-photo-container{
+    display: block;
+    
+    margin: 20px auto;
+
+    width: 40%;
+    
+}
+
+.content-photo{
+    display: block;
+
+    width: 100%;
+    
+}
+
+.astroleger-page-photo-container-parent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.astroleger-page-photo-container-child{
+    width: 17.5%;
+    height: 17.5%;
+}
+
+.astrologer-page-photo{
+    display: block;
+    
+    width: 100%;
+}
+
+.guest-room-container{
+    width: 90%;
+}
+
+.guest-room-header{
+    font-size: 1.15em;
+    font-weight: normal;
+}
+
+.guest-room-rendered-comment{
+    margin: 1.5em 0;
+}
+
+.guest-room-comment-user-name{
+    margin: 5px 0;
+
+    font-size: 1.5em;
+}
+
+.guest-room-comment-user-text{
+    margin: 0;
+
+    font-size: 1em; 
+}
+
+.guest-room-input-comment{
+    width: 75%;
+    height: 10em;
+
+    font-size: 1.05em;
+}
+
+.guest-room-input-user-name{
+    font-size: 0.95em;
+}
+
+.footer-paragraph{
+    margin: 0;
+}
+
+.footer-container{
+    padding: 20px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-contact-container{
+    text-align: left;
+    align-self: stretch;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-contact-with-icon-container{
+    align-self: stretch;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.footer-icon-description-container{
+    text-align: left;
+    align-self: stretch;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-icon-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fa-brands{
+    font-size: 2.5em;
+    
+    cursor: pointer;
+}
+
+/* specificity */
+
+.form-btn{
+    border: none;
+
+    cursor: pointer; 
+}
+
+.form-btn:hover{
+    background-color: rgb(114, 188, 218);
+
+    transform: scale(1.15);
+    transition: transform 0.5s ease;
+}
+
+.main-container{
+    background-image: url(/assets/main-background.png) no-repeat center ;
+}
+
+.nav-btn{
+    padding: 5px 3px 5px 3px;
+    border: 1px solid rgb(111, 57, 182, 0.5);
+    
+    background-color:rgb(246, 241, 250);
+    
+    cursor: pointer;
+}
+
+.nav-btn:hover{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.consultation-promotion{
+    text-align: center;
+}
+
+.full-note-container{
+    margin-top: 15px;
+}
+
+.note-title{
+    cursor: pointer;
+}
+
+.note-link-style{
+    font-size: 0.75em;
+    text-decoration: underline rgb(111, 57, 182, 0.5);
+
+    margin: 3px;
+    padding: 5px 3px 5px 3px;
+    /* border: 1px solid rgb(111, 57, 182, 0.5); */
+    
+    /* background-color:rgb(246, 241, 250); */
+
+    cursor: pointer;
+}
+
+.note-link-style:hover{
+    text-decoration: none;
+
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.content-btn{
+    font-size: 1.1em;
+
+    margin: 15px 3px 3px 3px;
+    padding: 5px 3px 5px 3px;
+    border: 1px solid rgb(111, 57, 182, 0.5);
+    
+    background-color:rgb(246, 241, 250);
+
+    cursor: pointer;
+}
+
+
+.content-btn:hover{
+    color: whitesmoke;
+    background-color: rgb(111, 57, 182, 0.8);
+
+    transform: scale(1.04);
+}
+
+.footer-container{
+    color: whitesmoke;
+    background-image: url(/assets/header-background-img.jpg);
+}
+
+.fa-brands{
+    color: whitesmoke;
+}
+
+.fa-brands:hover{
+    color: rgb(88, 216, 216);
+}
+
+.mail-link-footer:hover{
+    cursor: pointer;
+}
+
+/* functionality */
+
+/* content displaying */
+
+.toggle-display-none{
+    display: none;
+}
+
+#content-main{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+/* toggle dimploms photos */
+
+.expanded{
+    position: absolute;
+    top: 30%;
+    left: 32.5%;
+    width: 35%;
+    height: 35%;
+}
+
+
+
+/* media queries */
+
+
+@media screen and (max-width: 1320px){
+    p{
+        font-size: 1.25em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    .header-content-container{
+        flex-direction: column;
+
+        height: 400px;
+        row-gap: 10px;
+    }
+    .motto-header{
+        font-size: 2.5vw;
+    }   
+    .expanded{
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    p{
+        font-size: 1.1em;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+    .header-content-container{
+        flex-direction: column;
+        justify-content: center;
+        height: 600px;
+        row-gap: 10px;
+    }
+    .motto-header{
+        font-size: 2.75vw;
+    }  
+    .logo-form-header-container{
+        flex-direction: column;
+
+        gap: 0px;
+    }
+    .application-form{
+        justify-content: center;
+        gap: 1em;
+    }
+    .astroleger-page-photo-container-parent{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .astroleger-page-photo-container-child{
+        width: 75%;
+        height: 75%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-container{
+        flex-direction: column;
+    }
+    .motto-header{
+        font-size: 3.25vw;
+    }  
+    .content-container{
+        width: 100%;
+        max-height: none;
+
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .motto-header{
+        font-size: 4.25vw;
+    }  
+    .footer-container{
+        flex-direction: column;
+    }
+    .footer-contact-container{
+        text-align: center;
+        align-self: center;
+        gap: 20px;
+    }
+    .footer-contact-with-icon-container{
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    p{
+        font-size: 1em;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    h2{
+        font-size: 1.25em;
+    }
+    .header-content-container{
+        height: 700px;
+        row-gap: 20px;
+    }
+    .logo-header{
+        flex-direction: column;
+
+        gap: 0px;
+    }
+    .application-form{
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    .content-btn{
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 420px){
+    p{
+        font-size: 1em;
+    }
+    .motto-header{
+        font-size: 5.25vw;
+    }  
+    .main-container{
+        margin: 2px;
+        padding: 0px;
+    }
+    .content-container{
+        width: 75%;
+        max-height: none;
+        padding: 2.5em;
+
+        margin-top: 2%;
+    }
+}
